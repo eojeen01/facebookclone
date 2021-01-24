@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sign up page</title>
+        <script src="firebase2.js"></script>
+    </head>
+    <script>
+        function signupclick(){
+            var email = document.getElementById("email").value;
+            var password =  document.getElementById("pass").value;
+            var repass = document.getElementById("repass").value;
+
+            if(email==""){
+                alert("이메일을 입력해주세요.")
+            }
+            else if(password==""){
+                alert("비밀번호를 입력하여주세요.")
+            }
+            else if(repass==""){
+                alert("비밀번호 확인을 입력해주세요.");
+            }
+            else if(password!=repass){
+                alert("비밀번호 확인과 비밀번호를 확인해주세요.");
+            }
+            else{
+                signup(email,password);
+                
+
+            }
+
+        }
+    </script>
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+        <script src="firebase.js"></script>
+        
+        <input type="text" id="email" placeholder="Email">
+        <br>
+        <input type="password" id="pass" placeholder="PASSWORD">
+        <br>
+        <input type="password" id="repass" placeholder="PASSWORD 확인">
+        <br>
+        <input type="button" id="signUpbutton" onclick="signupclick()" value="회원가입 완료">
+       
+
+        
+    </body>
+
+</html>
+
+<!--
+    회원가입 페이지 입니다.
+ -->

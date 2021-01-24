@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="firebase2.js"></script>
+
+<head>
+    <h1>Login</h1>
+  </head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+  <script src="firebase.js"></script>
+ <p>
+<input type="text" id="user_email" placeholder="Email"><br>
+<input type="password" id="user_ps" placeholder="PASSWORD">
+</p>
+<input type="button" id="login" value="로그인" placeholder="PASSWORD" onclick="confirm_login()">
+<input type="button" id="signUp" value="회원가입" placeholder="PASSWORD" onclick="location.href='signUp.html'"><br>
+</body>
+<script>
+  function confirm_login(){
+    var email=document.getElementById("user_email").value;
+    var password=document.getElementById("user_ps").value;
+
+    if(email==""){
+      alert("이메일을 입력해주세요");
+    }
+    else if(password==""){
+      alert("비밀번호를 입력해주세요");
+    }
+    else{
+      logIn(email,password);
+    }
+  }
+  </script>
+  </html>
